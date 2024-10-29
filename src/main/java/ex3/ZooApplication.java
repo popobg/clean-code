@@ -14,6 +14,9 @@ public class ZooApplication {
 		Comportement herbivore = new Comportement("HERBIVORE");
 		Comportement carnivore = new Comportement("CARNIVORE");
 
+		// Correction des erreurs de comportement rapportés dans le code de base -
+		// Ce serait quand même dommage que notre gazelle se fasse dévorer par un lion
+		// pour une erreur de comportement rapporté...
 		Animal gazelle = new Animal("Gazelle", herbivore, mammifere);
 		Animal zebre = new Animal("Zèbre", herbivore, mammifere);
 		Animal panthere = new Animal("Panthère", carnivore, mammifere);

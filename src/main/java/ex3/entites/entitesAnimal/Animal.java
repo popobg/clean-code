@@ -8,9 +8,9 @@ public class Animal {
     /**
      * Constructeur
      * @param nom chaîne de caractères correspondant au nom de l'animal
-     * @param comportement chaîne de caractères correspondant au comportement
+     * @param comportement objet Comportement correspondant au comportement
      *                     de l'animal
-     * @param type chaîne de caractères correspondant au type de l'animal
+     * @param type objet Type correspondant au type de l'animal
      */
     public Animal(String nom, Comportement comportement, Type type) {
         this.nom = nom;
@@ -28,7 +28,7 @@ public class Animal {
 
     /**
      * Setter
-     * @param comportement chaîne de caractères visant à remplacer le comportement
+     * @param comportement objet Comportement visant à remplacer le comportement
      */
     public void setComportement(Comportement comportement) {
         this.comportement = comportement;
@@ -60,7 +60,7 @@ public class Animal {
 
     /**
      * Setter
-     * @param type chaîne de caractères visant à remplacer le type de l'animal
+     * @param type objet Type visant à remplacer le type de l'animal
      */
     public void setType(Type type) {
         this.type = type;
