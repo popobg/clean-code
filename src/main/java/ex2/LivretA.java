@@ -2,8 +2,50 @@ package ex2;
 
 public class LivretA extends CompteBancaire {
 
-	public LivretA(String type, double solde, double tauxRemuneration) {
-		super(type, solde, 0, tauxRemuneration);
+	/** tauxRemuneration : taux de rémunération dans le cas d'un livret A */
+	private double tauxRemuneration;
+
+	/**
+	 * Constructeur
+	 * @param solde représente le solde du compte
+	 * @param tauxRemuneration  représente le taux de rémunération du livret A
+	 */
+	public LivretA(double solde, double tauxRemuneration) {
+		super(solde, 0);
+		this.type = "LA";
+		this.tauxRemuneration = tauxRemuneration;
 	}
 
+	/**
+	 * Soustrait un montant au solde, si le résultat n'est pas négatif.
+	 * @param montant nombre décimal à soustraire
+	 */
+	@Override
+	public void debiterMontant(double montant) {
+		if (this.solde - montant >= 0) {
+			this.solde -= montant;
+		}
+	}
+
+	/**
+	 * Calcule la rémunération du livret A.
+	 */
+	public void appliquerRemuAnnuelle() {
+		this.solde += (solde * tauxRemuneration) / 100;
+	}
+
+	/** Getter
+	 * @return tauxRemuneration
+	 */
+	public double getTauxRemuneration() {
+		return tauxRemuneration;
+	}
+
+	/** Setter
+	 * @param tauxRemuneration le nombre décimal représentant le nouveau taux
+	 *                         de rémunération
+	 */
+	public void setTauxRemuneration(double tauxRemuneration) {
+		this.tauxRemuneration = tauxRemuneration;
+	}
 }

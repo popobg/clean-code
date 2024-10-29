@@ -5,76 +5,48 @@ package ex2;
  */
 public class CompteBancaire {
 
-	/** solde : solde du compte */
-	private double solde;
+	/** Solde du compte */
+	protected double solde;
 	
-	/** decouvert : un découvert est autorisé seulement pour les comptes courants */
-	private double decouvert;
+	/** Montant du découvert autorisé (seulement pour les comptes courants) */
+	protected double decouvert;
 	
-	/** tauxRemuneration : taux de rémunération dans le cas d'un livret A */
-	private double tauxRemuneration;
-	
-	/** Le type vaut soit CC=Compte courant, ou soit LA=Livret A */
-	private String type;
+	/** Le type vaut soit CC = Compte courant, ou soit LA = Livret A */
+	protected String type;
 	
 	/**
-	 * @param solde
-	 * @param decouvert
-	 * @param type
-	 */
-	public CompteBancaire(String type, double solde, double decouvert) {
-		super();
-		this.type = type;
-		this.solde = solde;
-		this.decouvert = decouvert;
-	}
-	
-	
-	/** Ce constructeur est utilisé pour créer un compte de type Livret A
-	 * @param type = LA
+	 * Constructeur
 	 * @param solde représente le solde du compte
 	 * @param decouvert  représente le découvert autorisé
-	 * @param tauxRemuneration  représente le taux de rémunération du livret A
 	 */
-	public CompteBancaire(String type, double solde, double decouvert, double tauxRemuneration) {
+	public CompteBancaire(double solde, double decouvert) {
 		super();
-		this.type = type;
+		this.type = "CC";
 		this.solde = solde;
 		this.decouvert = decouvert;
-		this.tauxRemuneration = tauxRemuneration;
 	}
 	
-	/** Ajoute un montant au solde
-	 * @param montant
+	/**
+	 * Ajoute un montant au solde.
+	 * @param montant nombre décimal à ajouter
 	 */
-	public void ajouterMontant(double montant){
+	public void ajouterMontant(double montant) {
 		this.solde += montant;
 	}
 	
-	/** Ajoute un montant au solde
-	 * @param montant
+	/**
+	 * Soustrait un montant au solde, si le résultat n'est pas inférieur
+	 * au montant autorisé de découvert.
+	 * @param montant nombre décimal à soustraire
 	 */
-	public void debiterMontant(double montant){
-		if (type.equals("CC")){
-			if (this.solde - montant > decouvert){
-				this.solde = solde - montant;
-			}	
-		}
-		else if (type.equals("LA")){
-			if (this.solde - montant > 0){
-				this.solde = solde - montant;
-			}	
-		}
-	}
-	
-	public void appliquerRemuAnnuelle(){
-		if (type.equals("LA")){
-			this.solde = solde + solde*tauxRemuneration/100;
+	public void debiterMontant(double montant) {
+		if (this.solde - montant > decouvert) {
+			this.solde -= montant;
 		}
 	}
 	
 	/** Getter for solde
-	 * @return the solde
+	 * @return solde
 	 */
 	public double getSolde() {
 		return solde;
@@ -86,40 +58,25 @@ public class CompteBancaire {
 	public void setSolde(double solde) {
 		this.solde = solde;
 	}
+
 	/** Getter for decouvert
-	 * @return the decouvert
+	 * @return decouvert
 	 */
 	public double getDecouvert() {
 		return decouvert;
 	}
+
 	/** Setter
-	 * @param decouvert the decouvert to set
+	 * @param decouvert le nombre décimal remplaçant le découvert autorisé
 	 */
 	public void setDecouvert(double decouvert) {
 		this.decouvert = decouvert;
 	}
-	/** Getter for tauxRemuneration
-	 * @return the tauxRemuneration
-	 */
-	public double getTauxRemuneration() {
-		return tauxRemuneration;
-	}
-	/** Setter
-	 * @param tauxRemuneration the tauxRemuneration to set
-	 */
-	public void setTauxRemuneration(double tauxRemuneration) {
-		this.tauxRemuneration = tauxRemuneration;
-	}
-	/** Getter for type
-	 * @return the type
+
+	/** Getter
+	 * @return type de compte
 	 */
 	public String getType() {
 		return type;
-	}
-	/** Setter
-	 * @param type the type to set
-	 */
-	public void setType(String type) {
-		this.type = type;
 	}
 }
