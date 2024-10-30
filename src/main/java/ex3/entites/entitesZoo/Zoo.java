@@ -6,6 +6,8 @@ import ex3.entites.entitesZones.FermeReptile;
 import ex3.entites.entitesZones.SavaneAfricaine;
 import ex3.entites.entitesZones.ZoneCarnivore;
 
+import java.util.ArrayList;
+
 public class Zoo {
 
 	/** Chaîne de caractères représentant le nom du zoo */
@@ -25,6 +27,10 @@ public class Zoo {
 	 */
 	public Zoo(String nom){
 		this.nom = nom;
+		this.zoneCarnivore = new ZoneCarnivore();
+		this.savaneAfricaine = new SavaneAfricaine();
+		this.fermeReptile = new FermeReptile();
+		this.aquarium = new Aquarium();
 	}
 
 	/**

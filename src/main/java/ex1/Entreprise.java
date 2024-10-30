@@ -10,7 +10,7 @@ public class Entreprise {
 	/** Chaîne de caractères représentant le nom de l'entreprise */
 	private String nom;
 
-	/** Chaîne de caractères représentant l'adresse de l'entreprise */
+	/** Chaîne de caractères représentant l'adresse du siège l'entreprise */
 	private String adresse;
 
 	/** Date représentant la date de création de l'entreprise */
@@ -22,7 +22,9 @@ public class Entreprise {
 	 */
 	public static final int CAPITAL_MAX = 3000000;
 
-	/** Méthode affichant le statut de l'entreprise */
+	/**
+	 * Méthode affichant le statut de l'entreprise (infos légales)
+	 */
 	public void afficherStatut() {
 		System.out.println("Nom : " + this.nom + "\nSiret : " + this.siret + "\nDate de création : " + this.dateCreation.toString() + "\nAdresse : " + this.adresse);
 	}

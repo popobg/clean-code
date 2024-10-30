@@ -17,17 +17,6 @@ public class LivretA extends CompteBancaire {
 	}
 
 	/**
-	 * Soustrait un montant au solde, si le résultat n'est pas négatif.
-	 * @param montant nombre décimal à soustraire
-	 */
-	@Override
-	public void debiterMontant(double montant) {
-		if (this.solde - montant >= 0) {
-			this.solde -= montant;
-		}
-	}
-
-	/**
 	 * Calcule la rémunération du livret A.
 	 */
 	public void appliquerRemuAnnuelle() {
@@ -42,7 +31,7 @@ public class LivretA extends CompteBancaire {
 	}
 
 	/** Setter
-	 * @param tauxRemuneration le nombre décimal représentant le nouveau taux
+	 * @param tauxRemuneration nombre décimal représentant le nouveau taux
 	 *                         de rémunération
 	 */
 	public void setTauxRemuneration(double tauxRemuneration) {

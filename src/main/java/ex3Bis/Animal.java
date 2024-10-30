@@ -21,6 +21,13 @@ public class Animal {
         this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return "Animal : " + this.nom
+                + ", type : " + this.type
+                + ", comportement : " + this.comportement;
+    }
+
     /**
      * Getter
      * @return comportement

@@ -1,5 +1,6 @@
 package ex3Bis;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Zoo {
      */
     public Zoo(String nom) {
         this.nom = nom;
+        this.animals = new ArrayList<>();
     }
 
     /**
@@ -30,7 +32,7 @@ public class Zoo {
      * Affiche la liste de tous les animaux du zoo.
      */
     public void afficherListeAnimaux() {
-        animals.forEach(a -> System.out.println(a.getNom() + " "));
+        animals.forEach(System.out::println);
     }
 
     /**

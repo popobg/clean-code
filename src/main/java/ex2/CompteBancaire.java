@@ -40,7 +40,7 @@ public class CompteBancaire {
 	 * @param montant nombre décimal à soustraire
 	 */
 	public void debiterMontant(double montant) {
-		if (this.solde - montant > decouvert) {
+		if (this.solde - montant >= decouvert) {
 			this.solde -= montant;
 		}
 	}

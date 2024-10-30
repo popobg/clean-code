@@ -9,7 +9,7 @@ public class CalculArithmetique {
 	 * @param deuxiemeNombre deuxième entier
 	 * @return int, résultat de l'addition
 	 */
-	public int additionnerNombres(int premierNombre, int deuxiemeNombre) {
+	public static int additionnerNombres(int premierNombre, int deuxiemeNombre) {
 		return premierNombre + deuxiemeNombre;
 	}
 
@@ -19,7 +19,7 @@ public class CalculArithmetique {
 	 * @param deuxiemeNombre deuxième entier
 	 * @return int, résultat de la soustraction
 	 */
-	public int soustraireNombres(int premierNombre, int deuxiemeNombre){
+	public static int soustraireNombres(int premierNombre, int deuxiemeNombre){
 		return premierNombre - deuxiemeNombre;
 	}
 }
